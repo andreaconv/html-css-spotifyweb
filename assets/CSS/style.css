@@ -49,7 +49,6 @@ header{
   width: calc(100% - var(--sidebar-width));
   height: var(--header-height);
   background-color: rgba(0, 0, 0, 0.5);
-  border: 1px solid black;
   color: white;
 }
 
@@ -80,12 +79,14 @@ section i{
 /* MAIN  */
 
 main{
+  padding: 20px;
   padding-top: var(--header-height);
   margin-left: var(--sidebar-width);
   width: calc(100% - var(--sidebar-width));
   height: calc(100vh - var(--footer-height));
   overflow-y: auto;
   background-color: #141922;
+  color: white;
 }
 
 main nav{
@@ -103,6 +104,24 @@ main nav ul li{
   /* border-bottom: 2px solid var(--color-green); */
 }
 
+/* CARDS */
+
+main .row{
+  flex-wrap: wrap;
+}
+
+main .row .col{
+  width: calc(100% / 6);
+  text-align: center;
+}
+
+main .row .col .image{
+  padding: 0 10px;
+}
+
+main .row .col .image img{
+  width: 100%;
+}
 
 
 

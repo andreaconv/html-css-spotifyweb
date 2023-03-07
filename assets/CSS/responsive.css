@@ -2,10 +2,16 @@
 
 @media all and (max-width:1100px) {
   /* le card diventano 4 per riga */
+  main .row .col{
+    width: calc(100% / 4);
+  }
 }
 
 @media all and (max-width:700px) {
   /* le card dientano 2 per riga  */
+  main .row .col{
+    width: calc(100% / 2);
+  }
 }
 
 @media all and (max-width:600px) {
