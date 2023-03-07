@@ -8,6 +8,13 @@ body{
   font-family: 'Tilt Warp', cursive;
 }
 
+:root {
+  --header-height: 70px;
+  --sidebar-width: 250px;
+  --footer-height: 100px;
+  --slim-sidebar: 50px
+}
+
 /* UTILS */
 .debug{
   background-color: gray;
@@ -18,10 +25,14 @@ body{
 
 header{
   position: fixed;
+  z-index: 999;
   top: 0;
-  left: 250px;
-  height: 70px;
-  width: calc(100% - 250px);
+  left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
+  height: var(--header-height);
+  /* debug */
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid black;
 }
 
 
@@ -31,23 +42,29 @@ header{
 section{
   position: fixed;
   top: 0;
-  width: 250px;
-  height: calc(100vh - 100px);
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--footer-height));
+  padding: 10px;
+}
+
+section i{
+  font-size: 2rem;
 }
 
 /* MAIN  */
 
 main{
-  height: calc(100vh - 170px);
-  width: calc(100% - 250px);
-  margin-left: 250px;
-  margin-top: 70px;
+  padding-top: var(--header-height);
+  margin-left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
+  height: calc(100vh - var(--footer-height));
   overflow-y: auto;
 }
 
 /* FOOTER  */
 
 footer{
-  height: 100px;
+  height: var(--footer-height);
   width: 100%;
 }
+
