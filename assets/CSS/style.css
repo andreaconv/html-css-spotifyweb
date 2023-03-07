@@ -8,17 +8,35 @@ body{
   font-family: 'Tilt Warp', cursive;
 }
 
+ul{
+  list-style: none;
+}
+
+/* UTILS */
+
 :root {
   --header-height: 70px;
   --sidebar-width: 250px;
   --footer-height: 100px;
-  --slim-sidebar: 50px
+  --slim-sidebar: 50px;
+  --color-grigio: #7d7f84;
+  --color-green: #adff2f;
 }
 
-/* UTILS */
-.debug{
-  background-color: gray;
-  border: 1px solid black;
+.d-flex{
+  display: flex;
+}
+
+.flex-end{
+  justify-content: flex-end;
+}
+
+.align-i-center{
+  align-items: center;
+}
+
+.font-8{
+  font-size: 0.8rem;
 }
 
 /* HEADER  */
@@ -30,14 +48,20 @@ header{
   left: var(--sidebar-width);
   width: calc(100% - var(--sidebar-width));
   height: var(--header-height);
-  /* debug */
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.5);
   border: 1px solid black;
+  color: white;
+}
+
+header .btn{
+  padding: 10px 20px;
+  border: 1px solid white;
+  border-radius: 30px;
+  margin: 0 20px;
 }
 
 
 /* SECTION  */
-/* AL CAMBIO DELLA LARGHEZZA DELLA SIDEBAR VA CAMBIATO ANCHE L'HEADER E IL MAIN > WIDTH: CALC (100% - LARGHEZZA SIDEBAR) E MARGIN-LEFT: LARGHEZZA SIDEBAR  */
 
 section{
   position: fixed;
@@ -45,6 +69,8 @@ section{
   width: var(--sidebar-width);
   height: calc(100vh - var(--footer-height));
   padding: 10px;
+  color: white;
+  background-color: black;
 }
 
 section i{
@@ -59,12 +85,34 @@ main{
   width: calc(100% - var(--sidebar-width));
   height: calc(100vh - var(--footer-height));
   overflow-y: auto;
+  background-color: #141922;
 }
+
+main nav{
+  text-align: center;
+  margin: 10px 0;
+}
+
+main nav ul{
+  color: var(--color-grigio);
+}
+
+main nav ul li{
+  display: inline;
+  margin: 0.5rem;
+  /* border-bottom: 2px solid var(--color-green); */
+}
+
+
+
+
+
 
 /* FOOTER  */
 
 footer{
   height: var(--footer-height);
   width: 100%;
+  background-color: #282828;
 }
 
