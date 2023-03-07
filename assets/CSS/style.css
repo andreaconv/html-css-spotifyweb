@@ -9,4 +9,45 @@ body{
 }
 
 /* UTILS */
+.debug{
+  background-color: gray;
+  border: 1px solid black;
+}
 
+/* HEADER  */
+
+header{
+  position: fixed;
+  top: 0;
+  left: 250px;
+  height: 70px;
+  width: calc(100% - 250px);
+}
+
+
+/* SECTION  */
+/* AL CAMBIO DELLA LARGHEZZA DELLA SIDEBAR VA CAMBIATO ANCHE L'HEADER E IL MAIN > WIDTH: CALC (100% - LARGHEZZA SIDEBAR) E MARGIN-LEFT: LARGHEZZA SIDEBAR  */
+
+section{
+  position: fixed;
+  top: 0;
+  width: 250px;
+  height: calc(100vh - 100px);
+}
+
+/* MAIN  */
+
+main{
+  height: calc(100vh - 170px);
+  width: calc(100% - 250px);
+  margin-left: 250px;
+  margin-top: 70px;
+  overflow-y: auto;
+}
+
+/* FOOTER  */
+
+footer{
+  height: 100px;
+  width: 100%;
+}
