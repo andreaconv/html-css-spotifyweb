@@ -19,9 +19,6 @@
 
   /* AL CAMBIO DELLA LARGHEZZA DELLA SIDEBAR VA CAMBIATO ANCHE L'HEADER E IL MAIN > WIDTH: CALC (100% - LARGHEZZA SIDEBAR) E MARGIN-LEFT: LARGHEZZA SIDEBAR  */
   
-  section{
-    width: var(--slim-sidebar);
-  }
   header{
     width: calc(100% - var(--slim-sidebar));
   }
@@ -29,3 +26,15 @@
     margin-left: var(--slim-sidebar);
     width: calc(100% - var(--slim-sidebar));
   }
+  section{
+    width: var(--slim-sidebar);
+  }
+
+  section .desktop{
+    display: none;
+  }
+
+  section .mobile{
+    display: block;
+  }
+}
