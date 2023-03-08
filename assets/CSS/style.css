@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 body{
-  font-family: 'Tilt Warp', cursive;
+  font-family: 'Montserrat', sans-serif;
   color: white;
 }
 
@@ -160,10 +160,6 @@ footer{
   padding: 10px;
 }
 
-footer i{
-  font-size: 0.8rem;
-}
-
 footer .bar{
   height: 4px;
   border-radius: 4px;
@@ -173,7 +169,7 @@ footer .bar{
 /* SONG  */
 
 footer .song{
-  width: 25%;
+  width: 30%;
 }
 
 footer .song *{
@@ -183,7 +179,6 @@ footer .song *{
 footer .song .image{
   width: 50px;
   aspect-ratio: 1 / 1;
-
 }
 
 footer .song .title{
@@ -204,7 +199,7 @@ footer .song i{
 footer .playback{
   flex-direction: column;
   align-items: center;
-  width: 50%;
+  width: 40%;
 }
 
 footer .playback .icons{
@@ -217,11 +212,11 @@ footer .playback .icons i{
 }
 
 footer .playback .icons i:nth-child(3){
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 
 footer .playback .duration{
-
+  
 }
 
 footer .playback .duration div{
@@ -233,13 +228,14 @@ footer .playback .duration .time{
 }
 
 footer .playback .duration .bar{
-  width: 100px;
+  width: 30vw;
+  margin: 0 10px;
 }
 
 /* VOLUME  */
 
 footer .volume{
-  width: 25%;
+  width: 30%;
 }
 
 footer .volume i{
@@ -247,5 +243,5 @@ footer .volume i{
 }
 
 footer .volume .bar{
-  width: 40%;
+  width: 8vw;
 }
