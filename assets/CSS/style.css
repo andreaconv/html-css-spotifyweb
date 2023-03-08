@@ -45,7 +45,7 @@ header{
   position: fixed;
   z-index: 999;
   top: 0;
-  left: var(--sidebar-width);
+  right: 0;
   width: calc(100% - var(--sidebar-width));
   height: var(--header-height);
   background-color: rgba(0, 0, 0, 0.5);
@@ -72,8 +72,11 @@ section{
   background-color: black;
 }
 
-section i{
-  font-size: 2rem;
+section .image{
+  width: 60%;
+}
+section .image img{
+  width: 100%;
 }
 
 /* MAIN  */
@@ -104,23 +107,34 @@ main nav ul li{
   /* border-bottom: 2px solid var(--color-green); */
 }
 
+main h3{
+  margin-top: 2rem ;
+}
+
 /* CARDS */
 
 main .row{
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 main .row .col{
   width: calc(100% / 6);
   text-align: center;
+  margin-bottom: 10px;
 }
 
 main .row .col .image{
-  padding: 0 10px;
+  padding: 10px 10px;
 }
 
 main .row .col .image img{
   width: 100%;
+}
+
+main span{
+  color: var(--color-grigio);
+  font-size: 0.8rem;
 }
 
 

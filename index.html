@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com"   crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&  display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/IMG/favicon.ico">
   <title>Spotify</title>
 </head>
 <body>
@@ -21,10 +22,16 @@
   </header>
 
 
-  <section>
-    <!-- SIDEBAR -->
-    <i class="fa-brands fa-spotify"></i> 
-    <span>Spotify</span>
+  <section> <!-- SIDEBAR -->
+    
+    <!-- aggiugere le icone come immagini e sostituirle quando la media query è bassa -->
+    <!-- dare la classe desktop e mobile per sostituire le icone con display none e block  -->
+
+    <div class="image">
+      <img src="assets/IMG/logo.svg" alt="">
+    </div>
+
+
   </section>
 
 
@@ -41,7 +48,7 @@
       </ul>
     </nav>
 
-    <h2>Recently played</h2>
+    <h3>Recently played</h3>
 
     <div class="row d-flex">
 
@@ -55,47 +62,92 @@
 
       <div class="col">
         <div class="image">
-          <img src="assets/IMG/metal_lifting.jpg" alt="">
+          <img src="assets/IMG/stranger.jpeg" alt="">
         </div>
-        <h4>Heavy Metal</h4>
+        <h4>Stranger Things</h4>
+        <span>Kyle Dixon & Michael Stein</span>
+      </div>
+
+      <div class="col">
+        <div class="image">
+          <img src="assets/IMG/aquietplace.jpeg" alt="">
+        </div>
+        <h4>A quiet place</h4>
         <span>Subtitle</span>
       </div>
 
       <div class="col">
         <div class="image">
-          <img src="assets/IMG/metal_lifting.jpg" alt="">
+          <img src="assets/IMG/split.jpeg" alt="">
         </div>
-        <h4>Heavy Metal</h4>
+        <h4>Split</h4>
         <span>Subtitle</span>
       </div>
 
       <div class="col">
         <div class="image">
-          <img src="assets/IMG/metal_lifting.jpg" alt="">
+          <img src="assets/IMG/cure.jpeg" alt="">
         </div>
-        <h4>Heavy Metal</h4>
+        <h4>A cure for wellness</h4>
         <span>Subtitle</span>
       </div>
 
       <div class="col">
         <div class="image">
-          <img src="assets/IMG/metal_lifting.jpg" alt="">
+          <img src="assets/IMG/sinister.jpeg" alt="">
         </div>
-        <h4>Heavy Metal</h4>
+        <h4>Sinister</h4>
         <span>Subtitle</span>
-      </div>
-
-      <div class="col">
-        <div class="image">
-          <img src="assets/IMG/metal_lifting.jpg" alt="">
-        </div>
-        <h4>Heavy Metal</h4>
-        <span>Subtitle</span>
-      </div>
-
-    
+      </div>    
 
     </div>
+
+
+    <h3>Creato per Ciccillo Cacace</h3>
+
+    <span>Più ascolti, più accurati saranno i suggerimetni.</span>
+
+    <div class="row d-flex">
+
+      <div class="col">
+        <div class="image">
+          <img src="assets/IMG/radar.jpeg" alt="">
+        </div>
+        <h4>Release RAdar</h4>
+      </div>
+
+      <div class="col">
+        <div class="image">
+          <img src="assets/IMG/mixdaily.jpeg" alt="">
+        </div>
+        <h4>Dailt Mix 1</h4>
+      </div> 
+      
+    </div>
+
+
+    <h3>Artisti più popolari</h3>
+
+    <span>Più ascolti, più accurati saranno i suggerimetni.</span>
+
+    <div class="row d-flex">
+
+      <div class="col">
+        <div class="image">
+          <img src="assets/IMG/youg.jpeg" alt="">
+        </div>
+        <h4>Lana del Rey</h4>
+      </div> 
+
+      <div class="col">
+        <div class="image">
+          <img src="assets/IMG/einaudi.jpeg" alt="">
+        </div>
+        <h4>Ludovico Einaudi</h4>
+      </div> 
+
+    </div>
+
   
   </main>
 

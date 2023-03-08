@@ -23,7 +23,6 @@
     width: var(--slim-sidebar);
   }
   header{
-    left: var(--slim-sidebar);
     width: calc(100% - var(--slim-sidebar));
   }
   main{
