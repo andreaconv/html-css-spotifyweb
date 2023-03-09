@@ -33,6 +33,9 @@ a{
   --slim-sidebar: 50px;
   --color-grigio: #7d7f84;
   --color-green: #adff2f;
+  --bar-height: 4px;
+  --duration: 20%;
+  --volume: 80%;
 }
 
 .debug{
@@ -72,7 +75,14 @@ header .btn{
   padding: 10px 20px;
   border: 1px solid white;
   border-radius: 30px;
+  margin: 0 30px;
+}
+
+header .btn:hover{
+  font-size: 1rem;
+  /* PROBLEMA: on hover si sposta così ho diminuito il margin laterale */
   margin: 0 20px;
+  cursor: pointer;
 }
 
 
@@ -91,7 +101,7 @@ section{
 
 section .desktop{
   display: block;
-  /* mandare in fondo alla colonna  */
+  /* per mandare in fondo alla colonna "installa app" ma non funziona */
   /* display: flex; */
   /* flex-direction: column; */
 
@@ -113,7 +123,16 @@ section .desktop nav{
 }
 
 section .desktop nav ul li{
-  /* allineare all'immagine */
+  /* PROBLEMA: allineare all'immagine */
+}
+
+section .desktop nav ul li:hover a{
+  color: white;
+  cursor: pointer;
+}
+
+section .desktop nav ul li.active{
+  border-left: 2px solid var(--color-green);  
 }
 
 section .desktop nav ul li *{
@@ -133,6 +152,17 @@ section .desktop .playlist h4{
   margin-bottom: 1rem;
 }
 
+section .desktop .playlist .add:hover{
+  color: white;
+  cursor: pointer;
+}
+
+section .desktop .playlist .add:hover span.plus{
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
 section .desktop .playlist span.plus{
   background-color: var(--color-grigio);
   color: black;
@@ -141,7 +171,7 @@ section .desktop .playlist span.plus{
 }
 
 section .desktop .playlist span:last-child{
-  /* allineare all'più */
+  /* PROBLEMA: allineare al + */
 }
 
 section .desktop .item{
@@ -155,12 +185,23 @@ section .desktop .item ul li{
   line-height: 2rem;
 }
 
+section .desktop .item ul li:hover{
+  color: white;
+  cursor: pointer;
+}
+
 section .desktop .text{
   /* mandare in fondo alla colonna  */
   /* align-self: flex-end; */
 }
 
+section .desktop .text span:first-of-type:hover{
+  color: white;
+  cursor: pointer;
+}
+
 section .desktop .text .image{
+  /* PROBLEMA: allineare al testo */
   display: inline-block;
   width: 20px;
 }
@@ -239,7 +280,16 @@ main nav ul{
 main nav ul li{
   display: inline;
   margin: 0.5rem;
-  /* border-bottom: 2px solid var(--color-green); */
+}
+
+main nav ul li.active{
+  border-bottom: 2px solid var(--color-green);  
+  /* PROBLEMA: la larghezza è più piccola */
+}
+
+main nav ul li:hover{
+  color: white;
+  cursor: pointer;
 }
 
 main h3{
@@ -286,6 +336,7 @@ main .row .col .image .overlay i{
 
 main .row .col .image:hover .overlay{
   display: block;
+  cursor: pointer;
 }
 
 main span{
@@ -313,7 +364,7 @@ footer{
   padding: 10px;
 }
 
-/* ALTERNATIVA GREZZA */
+/* ALTERNATIVA GREZZA MANDARE IN FONDO ALLA SIDEBAR */
 
 /* footer .text{
   position: absolute;
@@ -348,9 +399,29 @@ footer .text span:last-child{
 } */
 
 footer .bar{
-  height: 4px;
+  height: var(--bar-height);
   border-radius: 4px;
   background-color: var(--color-grigio);
+}
+
+footer .little-bar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: var(--bar-height);
+  border-radius: 4px;
+  background-color: white;
+}
+
+footer .circle{
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 12px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: white;
 }
 
 /* SONG  */
@@ -377,8 +448,18 @@ footer .song .title span{
   color: var(--color-grigio);
 }
 
+footer .song .title span:hover{
+  color: white;
+  cursor: pointer;
+}
+
 footer .song i{
   color: var(--color-grigio);
+}
+
+footer .song i:hover{
+  color: white;
+  cursor: pointer;
 }
 
 /* PLAYBACK  */
@@ -402,12 +483,9 @@ footer .playback .icons i:nth-child(3){
   font-size: 2rem;
 }
 
-footer .playback .duration{
-  
-}
-
-footer .playback .duration div{
-  
+footer .playback .icons i:nth-child(3):hover{
+  font-size: 2.5rem;
+  /* PROBLEMA: la barra sotto si sposta */
 }
 
 footer .playback .duration .time{
@@ -415,8 +493,25 @@ footer .playback .duration .time{
 }
 
 footer .playback .duration .bar{
+  position: relative;
   width: 30vw;
   margin: 0 10px;
+}
+
+footer .playback .duration .bar .little-bar{
+  width: var(--duration);
+}
+
+footer .playback .duration .bar .circle{
+  left: var(--duration);
+}
+
+footer .playback .duration .bar:hover .little-bar{
+  background-color: var(--color-green);
+}
+
+footer .playback .duration .bar:hover .circle{
+  display: block;
 }
 
 /* VOLUME  */
@@ -430,5 +525,23 @@ footer .volume i{
 }
 
 footer .volume .bar{
+  position: relative;
   width: 8vw;
 }
+
+footer .volume .bar .little-bar{
+  width: var(--volume);
+}
+
+footer .volume .bar .circle{
+  left: var(--volume);
+}
+
+footer .volume .bar:hover .little-bar{
+  background-color: var(--color-green);
+}
+
+footer .volume .bar:hover .circle{
+  display: block;
+}
+
