@@ -91,6 +91,10 @@ section{
 
 section .desktop{
   display: block;
+  /* mandare in fondo alla colonna  */
+  /* display: flex; */
+  /* flex-direction: column; */
+
 }
 section .mobile{
   display: none;
@@ -124,51 +128,51 @@ section .desktop nav ul li:first-child a{
   color: white;
 }
 
-section .desktop h4{
+section .desktop .playlist h4{
   color: white;
   margin-bottom: 1rem;
 }
 
-section .playlist span.plus{
+section .desktop .playlist span.plus{
   background-color: var(--color-grigio);
   color: black;
   font-size: 2rem;
   padding: 2px 9px;
 }
 
-section .playlist span:last-child{
+section .desktop .playlist span:last-child{
   /* allineare all'più */
 }
 
-section .item{
+section .desktop .item{
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
   /* trovare un modo per comprire con la scrollbar  */
   overflow-y: auto;
 }
 
-section .item ul li{
+section .desktop .item ul li{
   line-height: 2rem;
 }
 
-section .text{
-  /* position: absolute; */
-  /* top: -150px; */
+section .desktop .text{
+  /* mandare in fondo alla colonna  */
+  /* align-self: flex-end; */
 }
 
-section .text .image{
+section .desktop .text .image{
   display: inline-block;
   width: 20px;
 }
 
-section .text .line{
+section .desktop .text .line{
   height: 2px;
   margin: 1rem 0;
   width: 100%;
   background-color: var(--color-grigio);
 }
 
-section .text .image.user{
+section .desktop .text .image.user{
   width: 30px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
@@ -176,18 +180,37 @@ section .text .image.user{
   background-color: var(--color-grigio);
 }
 
-section .text span:last-child{
+section .desktop .text span:last-child{
   font-weight: bold;
   line-height: 30px;
   color: white;
 }
 
+/**************MOBILE****************/
 
+section .mobile .image.logo{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
 
+section .mobile nav ul li .image img{
+  width: 25px;
+  margin-bottom: 5px;
+}
 
+section .mobile .text .image{
+  display: inline-block;
+  width: 20px;
+}
 
-
-
+section .mobile .text .image.user{
+  width: 30px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  padding: 1px 4px;
+  background-color: var(--color-grigio);
+}
 
 
 

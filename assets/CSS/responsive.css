@@ -28,6 +28,7 @@
   }
   section{
     width: var(--slim-sidebar);
+    padding: 0 10px;
   }
 
   section .desktop{
