@@ -278,14 +278,24 @@ main nav ul{
 }
 
 main nav ul li{
+  position: relative;
   display: inline;
   margin: 0.5rem;
 }
 
-main nav ul li.active{
-  border-bottom: 2px solid var(--color-green);  
-  /* PROBLEMA: la larghezza è più piccola */
+/* SUGGERIMENTO  */
+
+main nav ul li.active::after{
+  content: "";
+  background-color: var(--color-green);
+  width: 40%;
+  height: 2px;
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
+
 
 main nav ul li:hover{
   color: white;
@@ -437,6 +447,7 @@ footer .song *{
 footer .song .image{
   width: 50px;
   aspect-ratio: 1 / 1;
+  /* PROBLEMA: la foto si rimpicciolisce  */
 }
 
 footer .song .title{
@@ -485,7 +496,7 @@ footer .playback .icons i:nth-child(3){
 
 footer .playback .icons i:nth-child(3):hover{
   font-size: 2.5rem;
-  /* PROBLEMA: la barra sotto si sposta */
+  /* PROBLEMA: la barra sotto si sposta perchè tutto il contenitore si sposta*/
 }
 
 footer .playback .duration .time{
