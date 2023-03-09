@@ -79,9 +79,7 @@ header .btn{
 }
 
 header .btn:hover{
-  font-size: 1rem;
-  /* PROBLEMA: on hover si sposta così ho diminuito il margin laterale */
-  margin: 0 20px;
+  transform: scale(1.1);
   cursor: pointer;
 }
 
@@ -495,8 +493,7 @@ footer .playback .icons i:nth-child(3){
 }
 
 footer .playback .icons i:nth-child(3):hover{
-  font-size: 2.5rem;
-  /* PROBLEMA: la barra sotto si sposta perchè tutto il contenitore si sposta*/
+  transform: scale(1.25);
 }
 
 footer .playback .duration .time{
