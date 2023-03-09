@@ -16,374 +16,372 @@
   <title>Spotify</title>
 </head>
 <body>
+
+  <!-- VERSIONE 2 -->
+  <!-- Da mettere nel README -->
+  <!-- Nella versione 2 ho sostituito la sidebar da "position fixed" a "flex-shrink" -->
+  <!-- L'ho fatto per poter posizionare in absolute la parte in basso -->
+
+
+  <div class="main-wrapper">
+
+    <div class="cta d-flex flex-end align-i-center">
+      <div class="btn font-8">EFFETTUA L'UPGRADE</div>
+    </div>
+
+    <main>
+
+      <aside>
+
+        <!-- DESKTOP  -->
+
+        <div class="desktop">
   
-  <header class="d-flex flex-end align-i-center">
-    <div class="btn font-8">EFFETTUA L'UPGRADE</div>
-  </header>
-
-
-  <section> <!-- SIDEBAR -->
-    
-    <!-- aggiugere le icone come immagini e sostituirle quando la media query è bassa -->
-    <!-- dare la classe desktop e mobile per sostituire le icone con display none e block  -->
-
-    <div class="desktop">
-
-      <div class="image logo">
-        <img src="assets/IMG/logo.svg" alt="">
-      </div>
-
-      <nav>
-        <ul>
-          <li class="active">
-            <div class="image">
-              <img src="assets/IMG/home.svg" alt="">
+          <div class="aside-top">
+            <div class="image logo">
+              <img src="assets/IMG/logo.svg" alt="">
             </div>
-            <a href="#">Home</a>
-          </li>
-
-          <li>
-            <div class="image">
-              <img src="assets/IMG/search.svg" alt="">
-            </div>
-            <a href="#">Cerca</a>
-          </li>
-
-          <li>
-            <div class="image">
-              <img src="assets/IMG/libreria.svg" alt="">
-            </div>
-            <a href="#">La tua libreria</a>
-          </li>
-
-        </ul>
-      </nav>
       
-      <div class="playlist">        
-        <h4>PLAYLIST</h4>
-        <div class="add">
-          <span class="plus">+</span>
-          <span>Crea Playlist</span>
+            <nav>
+              <ul>
+                <li class="active">
+                  <div class="image">
+                    <img src="assets/IMG/home.svg" alt="">
+                  </div>
+                  <a href="#">Home</a>
+                </li>
+      
+                <li>
+                  <div class="image">
+                    <img src="assets/IMG/search.svg" alt="">
+                  </div>
+                  <a href="#">Cerca</a>
+                </li>
+      
+                <li>
+                  <div class="image">
+                    <img src="assets/IMG/libreria.svg" alt="">
+                  </div>
+                  <a href="#">La tua libreria</a>
+                </li>
+      
+              </ul>
+            </nav>
+            
+            <div class="playlist">        
+              <h4>PLAYLIST</h4>
+              <div class="add">
+                <span class="plus">+</span>
+                <span>Crea Playlist</span>
+              </div>
+            </div>
+      
+            <div class="item">
+              <ul>
+                <li>Nome playlist</li>
+                <li>Nome playlist</li>
+                <li>Nome playlist</li>
+                <li>Nome playlist</li>
+                <li>Nome playlist</li>
+                <li>Nome playlist</li>
+                <li>Nome playlist</li>
+                <li>Nome playlist</li>
+                <li>Nome playlist</li>
+                <li>Nome playlist</li>
+                <li>Nome playlist</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="text">
+    
+            <div class="image">
+              <img src="assets/IMG/download.svg" alt="">
+            </div>
+            
+            <span>Installa app</span>
+    
+            <div class="line"></div>
+    
+            <div class="image user">
+              <img src="assets/IMG/profile.svg" alt="">
+            </div>
+            <span>Ciccillo Cacace</span>
+    
+          </div>
+        
+          
+    
         </div>
+
+        <!-- MOBILE -->
+
+        <div class="mobile">
+  
+  
+          <div class="image logo">
+            <img src="assets/IMG/logo-small.svg" alt="">
+          </div>
+    
+          <nav>
+            <ul>
+              <li>
+                <div class="image">
+                  <img src="assets/IMG/home.svg" alt="">
+                </div>
+              </li>
+    
+              <li>
+                <div class="image">
+                  <img src="assets/IMG/search.svg" alt="">
+                </div>
+              </li>
+    
+              <li>
+                <div class="image">
+                  <img src="assets/IMG/libreria.svg" alt="">
+                </div>
+              </li>
+    
+            </ul>
+          </nav>
+    
+          <div class="text">
+    
+            <div class="image">
+              <img src="assets/IMG/download.svg" alt="">
+            </div>
+    
+            <div class="image user">
+              <img src="assets/IMG/profile.svg" alt="">
+            </div>
+    
+          </div>
+    
+    
+        </div>
+
+      </aside>
+
+
+      <div class="content">
+        
+        <nav>
+          <ul class="font-8">
+            <li class="active">IN EVIDENZA</li>
+            <li>PODCAST</li>
+            <li>CLASSIFICHE</li>
+            <li>GENERI E MOOD</li>
+            <li>NUOVE USCITE</li>
+            <li>SCOPRI</li>
+          </ul>
+        </nav>
+
+        <h3>Recently played</h3>
+  
+        <div class="row d-flex">
+    
+          <div class="col">
+            <div class="image">
+              <img src="assets/IMG/metal_lifting.jpg" alt="">
+              <div class="overlay">
+                <i class="fa-regular fa-circle-play"></i>
+              </div>
+            </div>
+            <h4>Heavy Metal</h4>
+            <span>Subtitle</span>
+          </div>
+    
+          <div class="col">
+            <div class="image">
+              <img src="assets/IMG/stranger.jpeg" alt="">
+              <div class="overlay">
+                <i class="fa-regular fa-circle-play"></i>
+              </div>
+            </div>
+            <h4>Stranger Things</h4>
+            <span>Kyle Dixon & Michael Stein</span>
+          </div>
+    
+          <div class="col">
+            <div class="image">
+              <img src="assets/IMG/aquietplace.jpeg" alt="">
+              <div class="overlay">
+                <i class="fa-regular fa-circle-play"></i>
+              </div>
+            </div>
+            <h4>A quiet place</h4>
+            <span>Subtitle</span>
+          </div>
+    
+          <div class="col">
+            <div class="image">
+              <img src="assets/IMG/split.jpeg" alt="">
+              <div class="overlay">
+                <i class="fa-regular fa-circle-play"></i>
+              </div>
+            </div>
+            <h4>Split</h4>
+            <span>Subtitle</span>
+          </div>
+    
+          <div class="col">
+            <div class="image">
+              <img src="assets/IMG/cure.jpeg" alt="">
+              <div class="overlay">
+                <i class="fa-regular fa-circle-play"></i>
+              </div>
+            </div>
+            <h4>A cure for wellness</h4>
+            <span>Subtitle</span>
+          </div>
+    
+          <div class="col">
+            <div class="image">
+              <img src="assets/IMG/sinister.jpeg" alt="">
+              <div class="overlay">
+                <i class="fa-regular fa-circle-play"></i>
+              </div>
+            </div>
+            <h4>Sinister</h4>
+            <span>Subtitle</span>
+          </div>    
+    
+        </div>
+
+
+        <h3>Creato per Ciccillo Cacace</h3>
+  
+        <span>Più ascolti, più accurati saranno i suggerimetni.</span>
+    
+        <div class="row d-flex">
+    
+          <div class="col">
+            <div class="image">
+              <img src="assets/IMG/radar.jpeg" alt="">
+              <div class="overlay">
+                <i class="fa-regular fa-circle-play"></i>
+              </div>
+            </div>
+            <h4>Release RAdar</h4>
+          </div>
+    
+          <div class="col">
+            <div class="image">
+              <img src="assets/IMG/mixdaily.jpeg" alt="">
+              <div class="overlay">
+                <i class="fa-regular fa-circle-play"></i>
+              </div>
+            </div>
+            <h4>Dailt Mix 1</h4>
+          </div> 
+          
+        </div>
+    
+    
+        <h3>Artisti più popolari</h3>
+    
+        <span>Più ascolti, più accurati saranno i suggerimetni.</span>
+    
+        <div class="row d-flex">
+    
+          <div class="col">
+            <div class="image">
+              <img src="assets/IMG/youg.jpeg" alt="">
+              <div class="overlay">
+                <i class="fa-regular fa-circle-play"></i>
+              </div>
+            </div>
+            <h4>Lana del Rey</h4>
+          </div> 
+    
+          <div class="col">
+            <div class="image">
+              <img src="assets/IMG/einaudi.jpeg" alt="">
+              <div class="overlay">
+                <i class="fa-regular fa-circle-play"></i>
+              </div>
+            </div>
+            <h4>Ludovico Einaudi</h4>
+          </div> 
+    
+        </div>
+
+        
       </div>
 
-      <div class="item">
-        <ul>
-          <li>Nome playlist</li>
-          <li>Nome playlist</li>
-          <li>Nome playlist</li>
-          <li>Nome playlist</li>
-          <li>Nome playlist</li>
-          <li>Nome playlist</li>
-        </ul>
+      
+    </main>
+    
+
+    <div class="player d-flex align-i-center">
+
+      <!-- SINISTRA -->
+  
+      <div class="song d-flex">
+  
+        <div class="image d-flex align-i-center">
+          <img src="assets/IMG/einaudi.jpeg" alt="">
+        </div>
+  
+        <div class="title d-flex">
+          <h5>Experience</h5>
+          <span class="font-8">Ludovico Einaudi</span>
+        </div>
+  
+        <div class="font-awesome d-flex align-i-center">
+          <i class="fa-regular fa-heart"></i>
+          <i class="fa-regular fa-folder"></i>
+        </div>
+  
       </div>
 
-      <div class="text">
-
-        <div class="image">
-          <img src="assets/IMG/download.svg" alt="">
+      <!-- CENTRO  -->
+  
+      <div class="playback d-flex">
+  
+        <div class="icons d-flex align-i-center">
+          <i class="fa-solid fa-shuffle"></i>
+          <i class="fa-solid fa-backward-step"></i>
+          <i class="fa-regular fa-circle-play"></i>
+          <i class="fa-solid fa-forward-step"></i>
+          <i class="fa-solid fa-rotate-right"></i>      
+        </div>
+  
+        <div class="duration d-flex align-i-center">
+  
+          <div class="time">0:25</div>
+          <div class="bar">
+            <div class="little-bar"></div>
+            <div class="circle"></div>
+          </div>
+          <div class="time">4:35</div>
+          
         </div>
         
-        <span>Installa app</span>
-
-        <div class="line"></div>
-
-        <div class="image user">
-          <img src="assets/IMG/profile.svg" alt="">
-        </div>
-        <span>Ciccillo Cacace</span>
-
-      </div>
-      
-
-    </div>
-
-
-    <div class="mobile">
-
-
-      <div class="image logo">
-        <img src="assets/IMG/logo-small.svg" alt="">
       </div>
 
-      <nav>
-        <ul>
-          <li>
-            <div class="image">
-              <img src="assets/IMG/home.svg" alt="">
-            </div>
-          </li>
-
-          <li>
-            <div class="image">
-              <img src="assets/IMG/search.svg" alt="">
-            </div>
-          </li>
-
-          <li>
-            <div class="image">
-              <img src="assets/IMG/libreria.svg" alt="">
-            </div>
-          </li>
-
-        </ul>
-      </nav>
-
-      <div class="text">
-
-        <div class="image">
-          <img src="assets/IMG/download.svg" alt="">
-        </div>
-
-        <div class="image user">
-          <img src="assets/IMG/profile.svg" alt="">
-        </div>
-
-      </div>
-
-
-    </div>
-
-  </section>
-
+      <!-- DESTRA -->
   
-
-  <main>
-
-    <nav>
-      <ul class="font-8">
-        <li class="active">IN EVIDENZA</li>
-        <li>PODCAST</li>
-        <li>CLASSIFICHE</li>
-        <li>GENERI E MOOD</li>
-        <li>NUOVE USCITE</li>
-        <li>SCOPRI</li>
-      </ul>
-    </nav>
-
-    <h3>Recently played</h3>
-
-    <div class="row d-flex">
-
-      <div class="col">
-        <div class="image">
-          <img src="assets/IMG/metal_lifting.jpg" alt="">
-          <div class="overlay">
-            <i class="fa-regular fa-circle-play"></i>
-          </div>
-        </div>
-        <h4>Heavy Metal</h4>
-        <span>Subtitle</span>
-      </div>
-
-      <div class="col">
-        <div class="image">
-          <img src="assets/IMG/stranger.jpeg" alt="">
-          <div class="overlay">
-            <i class="fa-regular fa-circle-play"></i>
-          </div>
-        </div>
-        <h4>Stranger Things</h4>
-        <span>Kyle Dixon & Michael Stein</span>
-      </div>
-
-      <div class="col">
-        <div class="image">
-          <img src="assets/IMG/aquietplace.jpeg" alt="">
-          <div class="overlay">
-            <i class="fa-regular fa-circle-play"></i>
-          </div>
-        </div>
-        <h4>A quiet place</h4>
-        <span>Subtitle</span>
-      </div>
-
-      <div class="col">
-        <div class="image">
-          <img src="assets/IMG/split.jpeg" alt="">
-          <div class="overlay">
-            <i class="fa-regular fa-circle-play"></i>
-          </div>
-        </div>
-        <h4>Split</h4>
-        <span>Subtitle</span>
-      </div>
-
-      <div class="col">
-        <div class="image">
-          <img src="assets/IMG/cure.jpeg" alt="">
-          <div class="overlay">
-            <i class="fa-regular fa-circle-play"></i>
-          </div>
-        </div>
-        <h4>A cure for wellness</h4>
-        <span>Subtitle</span>
-      </div>
-
-      <div class="col">
-        <div class="image">
-          <img src="assets/IMG/sinister.jpeg" alt="">
-          <div class="overlay">
-            <i class="fa-regular fa-circle-play"></i>
-          </div>
-        </div>
-        <h4>Sinister</h4>
-        <span>Subtitle</span>
-      </div>    
-
-    </div>
-
-
-    <h3>Creato per Ciccillo Cacace</h3>
-
-    <span>Più ascolti, più accurati saranno i suggerimetni.</span>
-
-    <div class="row d-flex">
-
-      <div class="col">
-        <div class="image">
-          <img src="assets/IMG/radar.jpeg" alt="">
-          <div class="overlay">
-            <i class="fa-regular fa-circle-play"></i>
-          </div>
-        </div>
-        <h4>Release RAdar</h4>
-      </div>
-
-      <div class="col">
-        <div class="image">
-          <img src="assets/IMG/mixdaily.jpeg" alt="">
-          <div class="overlay">
-            <i class="fa-regular fa-circle-play"></i>
-          </div>
-        </div>
-        <h4>Dailt Mix 1</h4>
-      </div> 
-      
-    </div>
-
-
-    <h3>Artisti più popolari</h3>
-
-    <span>Più ascolti, più accurati saranno i suggerimetni.</span>
-
-    <div class="row d-flex">
-
-      <div class="col">
-        <div class="image">
-          <img src="assets/IMG/youg.jpeg" alt="">
-          <div class="overlay">
-            <i class="fa-regular fa-circle-play"></i>
-          </div>
-        </div>
-        <h4>Lana del Rey</h4>
-      </div> 
-
-      <div class="col">
-        <div class="image">
-          <img src="assets/IMG/einaudi.jpeg" alt="">
-          <div class="overlay">
-            <i class="fa-regular fa-circle-play"></i>
-          </div>
-        </div>
-        <h4>Ludovico Einaudi</h4>
-      </div> 
-
-    </div>
-
+      <div class="volume d-flex flex-end align-i-center">
   
-  </main>
-
-
-  <footer class="d-flex align-i-center">  
-
-    <!-- ALTERNATIVA MOLTO GREZZA -->
-
-    <!-- <div class="text">
-
-      <div class="image">
-        <img src="assets/IMG/download.svg" alt="">
-      </div>
-      
-      <span>Installa app</span>
-
-      <div class="line"></div>
-
-      <div class="image user">
-        <img src="assets/IMG/profile.svg" alt="">
-      </div>
-      <span>Ciccillo Cacace</span>
-
-    </div> -->
-
-
-
-
-    <!-- SINISTRA -->
-
-    <div class="song d-flex">
-
-      <div class="image d-flex align-i-center">
-        <img src="assets/IMG/einaudi.jpeg" alt="">
-      </div>
-
-      <div class="title d-flex">
-        <h5>Experience</h5>
-        <span class="font-8">Ludovico Einaudi</span>
-      </div>
-
-      <div class="font-awesome d-flex align-i-center">
-        <i class="fa-regular fa-heart"></i>
-        <i class="fa-regular fa-folder"></i>
-      </div>
-
-    </div>
-
-    <!-- CENTRO  -->
-
-    <div class="playback d-flex">
-
-      <div class="icons d-flex align-i-center">
-        <i class="fa-solid fa-shuffle"></i>
-        <i class="fa-solid fa-backward-step"></i>
-        <i class="fa-regular fa-circle-play"></i>
-        <i class="fa-solid fa-forward-step"></i>
-        <i class="fa-solid fa-rotate-right"></i>      
-      </div>
-
-      <div class="duration d-flex align-i-center">
-
-        <div class="time">0:25</div>
+        <div class="icons">
+          <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-tv"></i>
+          <i class="fa-solid fa-volume-high"></i>
+        </div>
+  
         <div class="bar">
           <div class="little-bar"></div>
           <div class="circle"></div>
         </div>
-        <div class="time">4:35</div>
-        
-      </div>
-      
-    </div>
-
-    <!-- DESTRA -->
-
-    <div class="volume d-flex flex-end align-i-center">
-
-      <div class="icons">
-        <i class="fa-solid fa-bars"></i>
-        <i class="fa-solid fa-tv"></i>
-        <i class="fa-solid fa-volume-high"></i>
+  
       </div>
 
-      <div class="bar">
-        <div class="little-bar"></div>
-        <div class="circle"></div>
-      </div>
+    </div>  
+    
 
-    </div>
-
-
-
-  </footer>
+  </div>
 
 </body>
 </html>

@@ -27,10 +27,10 @@ a{
 /* UTILS */
 
 :root {
-  --header-height: 70px;
-  --sidebar-width: 250px;
-  --footer-height: 100px;
-  --slim-sidebar: 50px;
+  --cta-height: 70px;
+  --aside-width: 250px;
+  --player-height: 100px;
+  --aside-slim: 50px;
   --color-grigio: #7d7f84;
   --color-green: #adff2f;
   --bar-height: 4px;
@@ -59,159 +59,184 @@ a{
   font-size: 0.8rem;
 }
 
-/* HEADER  */
+/* MAIN  */
 
-header{
+.main-wrapper{
+  height: 100vh;
+}
+
+.cta{
   position: fixed;
   z-index: 999;
   top: 0;
   right: 0;
-  width: calc(100% - var(--sidebar-width));
-  height: var(--header-height);
+  height: var(--cta-height);
+  width: calc(100% - var(--aside-width));
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-header .btn{
+.cta .btn{
   padding: 10px 20px;
   border: 1px solid white;
   border-radius: 30px;
   margin: 0 30px;
 }
 
-header .btn:hover{
+.cta .btn:hover{
   transform: scale(1.1);
   cursor: pointer;
 }
 
+main{
+  display: flex;
+  height: calc(100% - var(--player-height));
+}
 
-/* SECTION  */
+/* ASIDE  */
 
-section{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: var(--sidebar-width);
-  height: calc(100vh - var(--footer-height));
+aside{
+  width: var(--aside-width);
+  height: 100%;
+  flex-shrink: 0;
   padding: 0 20px;
   background-color: black;
   color: var(--color-grigio);
+  position: relative;
 }
 
-section .desktop{
+
+aside .desktop{
   display: block;
-  /* per mandare in fondo alla colonna "installa app" ma non funziona */
-  /* display: flex; */
-  /* flex-direction: column; */
-
 }
-section .mobile{
+
+aside .mobile{
   display: none;
 }
 
 /**************DESKTOP****************/
 
-section .desktop .image.logo{
+aside .desktop .aside-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+aside .desktop .image.logo{
   margin-top: 20px;
   margin-bottom: 10px;
   width: 70%;
 }
 
-section .desktop nav{
+aside .desktop nav{
   margin-bottom: 1.5rem;
 }
 
-section .desktop nav ul li{
+aside .desktop nav ul li{
+  position: relative;
   /* PROBLEMA: allineare all'immagine */
 }
 
-section .desktop nav ul li:hover a{
+aside .desktop nav ul li.active::before{
+  content: "";
+  background-color: var(--color-green);
+  width: 2px;
+  height: 1.4rem;
+  position: absolute;
+  bottom: 0;
+  left: -20px;
+}
+
+aside .desktop nav ul li:hover a{
   color: white;
   cursor: pointer;
 }
 
-section .desktop nav ul li.active{
-  border-left: 2px solid var(--color-green);  
-}
-
-section .desktop nav ul li *{
+aside .desktop nav ul li *{
   display: inline-block;
 }
 
-section .desktop nav ul li .image img{
+aside .desktop nav ul li .image img{
   width: 20px;
 }
 
-section .desktop nav ul li:first-child a{
+aside .desktop nav ul li:first-child a{
   color: white;
 }
 
-section .desktop .playlist h4{
+aside .desktop .playlist h4{
   color: white;
   margin-bottom: 1rem;
 }
 
-section .desktop .playlist .add:hover{
+aside .desktop .playlist .add:hover{
   color: white;
   cursor: pointer;
 }
 
-section .desktop .playlist .add:hover span.plus{
+aside .desktop .playlist .add:hover span.plus{
   background-color: white;
   color: black;
   cursor: pointer;
 }
 
-section .desktop .playlist span.plus{
+aside .desktop .playlist span.plus{
   background-color: var(--color-grigio);
   color: black;
   font-size: 2rem;
   padding: 2px 9px;
 }
 
-section .desktop .playlist span:last-child{
+aside .desktop .playlist span:last-child{
   /* PROBLEMA: allineare al + */
 }
 
-section .desktop .item{
+aside .desktop .item{
   margin-top: 1rem;
-  /* margin-bottom: 2rem; */
-  /* trovare un modo per comprire con la scrollbar  */
+  height: calc(100vh - 500px);
   overflow-y: auto;
 }
 
-section .desktop .item ul li{
+aside .desktop .item ul li{
   line-height: 2rem;
 }
 
-section .desktop .item ul li:hover{
+aside .desktop .item ul li:hover{
   color: white;
   cursor: pointer;
 }
 
-section .desktop .text{
-  /* mandare in fondo alla colonna  */
-  /* align-self: flex-end; */
+aside .desktop .text{
+  width: calc(var(--aside-width) - 40px);
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  /* PROBLEMA: nascondere la playlist quando l'altezza della pagina diminuisce */
+  /* SOLUZIONE GREZZA */
+  background-color: black;
 }
 
-section .desktop .text span:first-of-type:hover{
-  color: white;
-  cursor: pointer;
-}
-
-section .desktop .text .image{
-  /* PROBLEMA: allineare al testo */
+aside .desktop .text .image{
   display: inline-block;
   width: 20px;
 }
 
-section .desktop .text .line{
+aside .desktop .text span:first-of-type{
+  /* PROBLEMA: allineare all'immagine */
+}
+
+aside .desktop .text span:first-of-type:hover{
+  color: white;
+  cursor: pointer;
+}
+
+aside .desktop .text .line{
   height: 2px;
   margin: 1rem 0;
   width: 100%;
   background-color: var(--color-grigio);
 }
 
-section .desktop .text .image.user{
+aside .desktop .text .image.user{
   width: 30px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
@@ -219,7 +244,8 @@ section .desktop .text .image.user{
   background-color: var(--color-grigio);
 }
 
-section .desktop .text span:last-child{
+aside .desktop .text span:last-child{
+  /* PROBLEMA: allineare all'immagine */
   font-weight: bold;
   line-height: 30px;
   color: white;
@@ -227,23 +253,32 @@ section .desktop .text span:last-child{
 
 /**************MOBILE****************/
 
-section .mobile .image.logo{
+aside .mobile .image.logo{
   margin-top: 10px;
   margin-bottom: 10px;
   width: 100%;
 }
 
-section .mobile nav ul li .image img{
+aside .mobile nav ul li .image img{
   width: 25px;
   margin-bottom: 5px;
 }
 
-section .mobile .text .image{
-  display: inline-block;
+aside .mobile .text{
+  width: calc(var(--aside-slim) - 20px);
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  /* PROBLEMA: nascondere la playlist quando l'altezza della pagina diminuisce */
+  /* SOLUZIONE GREZZA */
+  background-color: black;
+}
+
+aside .mobile .text .image{
   width: 20px;
 }
 
-section .mobile .text .image.user{
+aside .mobile .text .image.user{
   width: 30px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
@@ -252,30 +287,29 @@ section .mobile .text .image.user{
 }
 
 
+/* CONTENT  */
 
-/* MAIN  */
-
-main{
+.content{
   padding: 20px;
-  padding-top: var(--header-height);
-  margin-left: var(--sidebar-width);
-  width: calc(100% - var(--sidebar-width));
-  height: calc(100vh - var(--footer-height));
-  overflow-y: auto;
+  padding-top: var(--cta-height);
+  width: 100%;
+  height: 100%;
   background-color: #141922;
+  color: white;
+  overflow-y: auto;
 }
 
-main nav{
+main .content nav{
   text-align: center;
   margin: 10px 0;
 }
 
-main nav ul{
+main .content nav ul{
   color: var(--color-grigio);
   font-weight: 800;
 }
 
-main nav ul li{
+main .content nav ul li{
   position: relative;
   display: inline;
   margin: 0.5rem;
@@ -283,7 +317,7 @@ main nav ul li{
 
 /* SUGGERIMENTO  */
 
-main nav ul li.active::after{
+main .content nav ul li.active::after{
   content: "";
   background-color: var(--color-green);
   width: 40%;
@@ -294,37 +328,36 @@ main nav ul li.active::after{
   transform: translate(-50%, 0);
 }
 
-
-main nav ul li:hover{
+main .content nav ul li:hover{
   color: white;
   cursor: pointer;
 }
 
-main h3{
+main .content h3{
   margin-top: 2rem ;
 }
 
 /* CARDS */
 
-main .row{
+main .content .row{
   flex-wrap: wrap;
   margin-top: 1rem;
 }
 
-main .row .col{
+main .content .row .col{
   width: calc(100% / 6);
   text-align: center;
   margin-bottom: 10px;
   padding: 10px 10px;
 }
 
-main .row .col .image{
+main .content .row .col .image{
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
 }
 
-main .row .col .image .overlay{
+main .content .row .col .image .overlay{
   display: none;
   position: absolute;
   top: 0;
@@ -334,7 +367,7 @@ main .row .col .image .overlay{
   background-color: rgba(0,0,0,.5);
 }
 
-main .row .col .image .overlay i{
+main .content .row .col .image .overlay i{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -342,77 +375,39 @@ main .row .col .image .overlay i{
   font-size: 3rem;
 }
 
-main .row .col .image:hover .overlay{
+main .content .row .col .image:hover .overlay{
   display: block;
   cursor: pointer;
 }
 
-main span{
+main .content span{
   color: var(--color-grigio);
   font-size: 0.8rem;
 }
 
-main .row:last-of-type .col .image{
+main .content .row:last-of-type .col .image{
   border-radius: 50%;
   overflow: hidden;
 }
 
 
+/* PLAYER  */
 
-
-
-/* FOOTER  */
-
-footer{
-  /* position: relative; */
-  justify-content: space-between;
-  height: var(--footer-height);
+.player{
+  /* justify-content: space-between; */
+  height: var(--player-height);
   width: 100%;
   background-color: #282828;
   padding: 10px;
 }
 
-/* ALTERNATIVA GREZZA MANDARE IN FONDO ALLA SIDEBAR */
-
-/* footer .text{
-  position: absolute;
-  top: -100px;
-  left: 20px;
-}
-
-footer .text .image{
-  display: inline-block;
-  width: 20px;
-}
-
-footer .text .line{
-  height: 2px;
-  margin: 1rem 0;
-  width: calc(var(--sidebar-width) - 40px);
-  background-color: var(--color-grigio);
-}
-
-footer .text .image.user{
-  width: 30px;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  padding: 1px 4px;
-  background-color: var(--color-grigio);
-}
-
-footer .text span:last-child{
-  font-weight: bold;
-  line-height: 30px;
-  color: white;
-} */
-
-footer .bar{
+.player .bar{
   height: var(--bar-height);
   border-radius: 4px;
   background-color: var(--color-grigio);
 }
 
-footer .little-bar{
+.player .little-bar{
   position: absolute;
   top: 0;
   left: 0;
@@ -421,7 +416,7 @@ footer .little-bar{
   background-color: white;
 }
 
-footer .circle{
+.player .circle{
   display: none;
   position: absolute;
   top: 50%;
@@ -434,122 +429,128 @@ footer .circle{
 
 /* SONG  */
 
-footer .song{
+.player .song{
   width: 30%;
+  background-color: #282828;
 }
 
-footer .song *{
+.player .song *{
   margin-right: 5px;
 }
 
-footer .song .image{
+.player .song .image{
   width: 50px;
   aspect-ratio: 1 / 1;
   /* PROBLEMA: la foto si rimpicciolisce  */
 }
 
-footer .song .title{
+.player .song .title{
   flex-direction: column;
   justify-content: center;
 }
 
-footer .song .title span{
+.player .song .title span{
   color: var(--color-grigio);
 }
 
-footer .song .title span:hover{
+.player .song .title span:hover{
   color: white;
   cursor: pointer;
 }
 
-footer .song i{
+.player .song i{
   color: var(--color-grigio);
 }
 
-footer .song i:hover{
+.player .song i:hover{
   color: white;
   cursor: pointer;
 }
 
 /* PLAYBACK  */
 
-footer .playback{
+.player .playback{
   flex-direction: column;
   align-items: center;
   width: 40%;
 }
 
-footer .playback .icons{
+.player .playback .icons{
   justify-content: center;
   margin-bottom: 1rem;
 }
 
-footer .playback .icons i{
+.player .playback .icons i{
   margin: 0 10px;
 }
 
-footer .playback .icons i:nth-child(3){
+.player .playback .icons i:nth-child(3){
   font-size: 2rem;
 }
 
-footer .playback .icons i:nth-child(3):hover{
+.player .playback .icons i:nth-child(3):hover{
   transform: scale(1.25);
 }
 
-footer .playback .duration .time{
+.player .playback .duration .time{
   font-size: 0.7rem;
 }
 
-footer .playback .duration .bar{
+.player .playback .duration .bar{
   position: relative;
   width: 30vw;
   margin: 0 10px;
 }
 
-footer .playback .duration .bar .little-bar{
+.player .playback .duration .bar .little-bar{
   width: var(--duration);
 }
 
-footer .playback .duration .bar .circle{
+.player .playback .duration .bar .circle{
   left: var(--duration);
 }
 
-footer .playback .duration .bar:hover .little-bar{
+.player .playback .duration .bar:hover .little-bar{
   background-color: var(--color-green);
 }
 
-footer .playback .duration .bar:hover .circle{
+.player .playback .duration .bar:hover .circle{
   display: block;
 }
 
 /* VOLUME  */
 
-footer .volume{
+.player .volume{
   width: 30%;
 }
 
-footer .volume i{
+.player .volume i{
   margin-right: 10px;
 }
 
-footer .volume .bar{
+.player .volume .bar{
   position: relative;
   width: 8vw;
 }
 
-footer .volume .bar .little-bar{
+.player .volume .bar .little-bar{
   width: var(--volume);
 }
 
-footer .volume .bar .circle{
+.player .volume .bar .circle{
   left: var(--volume);
 }
 
-footer .volume .bar:hover .little-bar{
+.player .volume .bar:hover .little-bar{
   background-color: var(--color-green);
 }
 
-footer .volume .bar:hover .circle{
+.player .volume .bar:hover .circle{
   display: block;
 }
+
+
+
+
+
 
